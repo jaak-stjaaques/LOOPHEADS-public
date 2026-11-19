@@ -5,6 +5,12 @@ For **LOOPHEADS 0.1.2** on the **M‑VAVE FM‑1**.
 The battery icon in the upper-right corner of each menu shows the FM‑1’s
 approximate charge level. More bars indicate a higher charge.
 
+## Play in a browser
+
+Download [loopheads_0.1.2.fwsc](https://github.com/jaak-stjaaques/LOOPHEADS-public/releases/download/v0.1.2/loopheads_0.1.2.fwsc).
+Open the [FM‑1 emulator](https://joakimeriksson.github.io/fm1-emu/?fw=local&mhz=100),
+choose **Open .fwsc…** and select the downloaded file, then press **Start**.
+
 ## Make your first loop
 
 1. Turn up **MASTER** and play a few keys. **OCT−** and **OCT+** shift the keyboard by octaves.
@@ -18,6 +24,12 @@ The selected tape is the destination for live playing and recording. **EDIT**,
 
 ## HOME mixer
 
+<p>
+  <img src="screenshots/home-volume.png" width="240" alt="HOME Volume with different levels on all four tapes">
+  <img src="screenshots/home-pan.png" width="240" alt="HOME Pan showing left, center, and right positions">
+  <img src="screenshots/home-mute.png" width="240" alt="HOME Mute with tape 4 muted">
+</p>
+
 **HOME** opens the last mixer page you used, starting on **Volume** at power-on.
 Press **HOME** again to cycle through **Volume → Pan → Mute → Volume**. The cyan
 box marks the selected tape. Knobs **1–4** always correspond to tapes **1–4**.
@@ -29,6 +41,12 @@ box marks the selected tape. Knobs **1–4** always correspond to tapes **1–4*
 | **Mute** | Turn left to mute or right to unmute. The tape keeps its place. Delay and reverb already ringing can fade naturally. |
 
 ## EDIT, ENV, and LFO
+
+<p>
+  <img src="screenshots/edit-sus2.png" width="240" alt="EDIT with String resonator and SUS2 ping">
+  <img src="screenshots/envelope.png" width="240" alt="ENV with the ADSR graph and values">
+  <img src="screenshots/lfo.png" width="240" alt="LFO with a sine wave modulating pitch">
+</p>
 
 Turn **SELECT** to choose the tape before editing. Its number appears in the
 menu title.
@@ -54,6 +72,10 @@ Press **SEQ** again to switch between **TAPE LOOPS** and **Memory Leak**.
 
 ### Tape Loops
 
+<p>
+  <img src="screenshots/tape-loops.png" width="240" alt="TAPE LOOPS with notes on all four tapes, STRETCH on tapes 1 and 3, and tape 4 muted">
+</p>
+
 Each row shows the tape number, length, remaining note slots, timing mode, and
 transport state. A muted tape shows **MUTE** when playing or stopped. The active
 recording tape shows **REC**. The small marks show recorded note starts. The
@@ -77,6 +99,10 @@ Release **EDIT** to stop erasing. A short press opens the EDIT menu.
 
 ### Memory Leak
 
+<p>
+  <img src="screenshots/memory-leak.png" width="240" alt="MEMORY LEAK with different pass counts on three tapes">
+</p>
+
 The cyan box marks the selected tape.
 Knobs **1–4** set each tape to **OFF, 10, 9, 8, 7, 6, 5, 4, 3, or 2** passes.
 Each note gets its own lifetime starting when you record it. Notes added
@@ -85,6 +111,10 @@ successive passes, then frees its slot. **OFF** freezes the current fade.
 Notes hidden outside a shortened **KEEP** loop stay stored.
 
 ## SCALE and live transpose
+
+<p>
+  <img src="screenshots/scale.png" width="240" alt="ALL TAPES SCALE showing C Major and the notes on the keyboard">
+</p>
 
 Press **SCALE** to open **ALL TAPES SCALE**. **Knob 1** sets the root. **Knob 2**
 picks the scale for all four tapes. The
@@ -100,6 +130,11 @@ while any tape is recording.
 
 ## ARP and Strum
 
+<p>
+  <img src="screenshots/arp.png" width="240" alt="ARP in Up/Down mode with rate, gate, and tempo">
+  <img src="screenshots/strum.png" width="240" alt="Strum Up with a 35 ms spread">
+</p>
+
 Press **ARP**. Knob **1** selects **Off**, **Up**, **Down**, **Up/Down**,
 **Random**, **Strum Up**, or **Strum Down**.
 
@@ -108,6 +143,11 @@ Press **ARP**. Knob **1** selects **Off**, **Up**, **Down**, **Up/Down**,
 - Play from the keyboard or send MIDI notes in. Record into a tape to capture the resulting notes. In **GLO / AUTO**, incoming MIDI clock drives the repeating arp when it is available.
 
 ## FX Delay and Hall
+
+<p>
+  <img src="screenshots/fx-delay.png" width="240" alt="FX DELAY with time, feedback, and mix">
+  <img src="screenshots/fx-hall.png" width="240" alt="FX HALL with decay, damping, and mix">
+</p>
 
 **FX** opens the last effect page you used, starting on **Delay** at power-on.
 Press **FX** again to switch between **Delay** and **Hall**. Both effects process
@@ -133,6 +173,10 @@ Delay follows the MIDI clock source chosen in **GLO**, with the tempo from
 - Unsaved recordings disappear at power-off. After power-on, hold **SAVE** to load a saved snapshot.
 
 ## GLO setup
+
+<p>
+  <img src="screenshots/glo.png" width="240" alt="GLO with clock, MIDI channel, tuning, and panic controls">
+</p>
 
 | Knob | Control |
 | --- | --- |
