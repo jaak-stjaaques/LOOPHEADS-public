@@ -1,5 +1,14 @@
 # LOOPHEADS
 
+<p align="center">
+  <img src="docs/screenshots/boot.png" width="320" alt="LOOPHEADS boot logo and version 0.1.2">
+  <img src="docs/screenshots/tape-loops.png" width="320" alt="Tape Loops with recorded notes on all four tapes, Stretch on tapes 1 and 3, and tape 4 muted">
+</p>
+<p align="center">
+  <img src="docs/screenshots/edit-sus2.png" width="320" alt="Tape 1 Edit menu with the String resonator and Sus2 ping">
+  <img src="docs/screenshots/envelope.png" width="320" alt="Tape 1 Envelope menu with the ADSR graph and values">
+</p>
+
 LOOPHEADS is a four-tape instrument for the **M‑VAVE FM‑1**. Each tape loops at its
 own length and plays through its own Karplus–Strong sound. Play a phrase, overdub
 it, then let the loops drift in and out of alignment.
