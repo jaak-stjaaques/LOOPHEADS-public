@@ -368,7 +368,7 @@ def smk():
     if clean.exists():
         raw = clean.read_bytes()
         image, n = I.deinterleave(raw)
-        ok(n == 20 and image == I.logical_image(raw) and not I.package_damage(image) and I.product_of(raw).startswith("FM-1_"),
+        ok(n == 20 and image == I.logical_image(raw) and not I.package_damage(image) and I.product_of(raw) == "FM-1_566741",
            f"FM-1 package {clean.name} still parses: 20 blocks, {I.product_of(raw)}")
 
 

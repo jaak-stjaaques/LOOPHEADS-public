@@ -26,28 +26,21 @@ works: `./build.sh` and `tests/run_host.sh` (see the [README](../README.md)).
 
 ## 3. Your package identity
 
-Every FM-1 package carries an identity like `FM-1_990`. The FM-1 reports the one it runs, and installers and the
-hub use it to tell firmwares apart: two firmwares with the same identity look like one.
-
-- Dinghy is `FM-1_99N` (N = the minor version; on the SMK-37 `SMK-37 Pro_99N`, `SMK-37 Elite_99N`, `MKE-P37_99N`).
-  **Pick your own** in `tools/build.py` (`BOARD_PREFIX` and `PRODUCT`).
-- Keep the form `FM-1_9` + two digits if you can: the web installers then also finish an install that was cut
-  off halfway (they resume only the update loaders they know, `FM-1_9NN`).
-- Taken so far: `900` SLOOP, `91N` Felucca, `93N` sloopDX, `97N` zp12, `98N` (a Doom port), `99N` Dinghy, and others
-  in the hub's list. There is no registry yet: look at the hub, and ask there if you are unsure.
+The FM-1 reports the package identity of the firmware it runs. Installers and
+the Hub use it to tell firmwares apart. LOOPHEADS uses `FM-1_566741`.
+For a fork, choose your own number with the
+[Hub's identity checker](https://thefirmwarehub.com/submit/#check), then update
+`FM1_PRODUCT` in `tools/build.py` and the FM-1 fallback in `firmware/src/platform.c`.
 
 ## 4. Release
 
 ```sh
-./build.sh --release 0.2        # -> build/dinghy-0.2.fwsc, identity FM-1_992, the version "0.2" on the screen
+./build.sh                      # -> build/loopheads_<VERSION>.fwsc
 ```
 
-On GitHub: a release with a tag (`v0.2`) and the `.fwsc` attached. Say what changed in its notes: the hub links
-them.
-
-Or let GitHub build it: push a tag `v0.2` and `.github/workflows/release.yml` builds the FM-1 and the three SMK-37
-packages, runs `tests/run_tests.sh` and publishes the release with a build attestation (the proof that these files
-were built from this source on GitHub; the hub can show it). It needs nothing from you but the tag.
+On GitHub, publish a release with a tag matching `VERSION` and attach the FM-1
+`.fwsc`. If you push the tag first, the release workflow builds all targets,
+runs the offline suite, and publishes the FM-1 package once the checks pass.
 
 ## 5. Into the hub
 

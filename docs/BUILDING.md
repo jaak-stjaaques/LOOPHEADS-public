@@ -1,7 +1,7 @@
 # Build and test LOOPHEADS
 
 The FM‑1 package for version 0.1.2 is `build/loopheads_0.1.2.fwsc`. The device's
-installer identifies this build as `FM-1_990`.
+installer identifies LOOPHEADS as `FM-1_566741`.
 
 ## Build on a computer
 

@@ -1,5 +1,4 @@
-# Dinghy: build the packages on GitHub, run the host tests, and on a tag vX.Y publish the release with a build
-# attestation (actions/attest-build-provenance): the Firmware Hub shows "Built from source" for exactly these files.
+# Build LOOPHEADS, run the host tests, and publish the FM-1 package on version tags.
 # The JieLi toolchain comes from pkgman.jieliapp.com (tools/get_toolchain.sh), the AC79 SDK from gitee.com, as in
 # sloopDX's and OberVave's workflows. Run by hand (workflow_dispatch) for a test build without a release.
 name: release
@@ -52,17 +51,13 @@ jobs:
       - name: Release packages (tags only)
         if: github.ref_type == 'tag'
         run: |
-          V="${GITHUB_REF_NAME#v}"
-          BOARD=smk37 sh build.sh --release "$V"
-          BOARD=smk37 MODEL=elite sh build.sh --release "$V"
-          BOARD=smk37 MODEL=mke sh build.sh --release "$V"
-          sh build.sh --release "$V"
-          ls -l build/dinghy-"$V"*.fwsc
-          (cd build && sha256sum dinghy-"$V"*.fwsc > SHA256SUMS)
+          version=$(cat VERSION)
+          test "$GITHUB_REF_NAME" = "v$version"
+          (cd build && sha256sum "loopheads_$version.fwsc" > SHA256SUMS)
 
       - uses: actions/upload-artifact@v4
         with:
-          name: dinghy-fwsc
+          name: loopheads-fwsc
           path: |
             build/loopheads_*.fwsc
             build/dinghy*.fwsc
@@ -72,14 +67,22 @@ jobs:
         if: github.ref_type == 'tag'
         uses: actions/attest-build-provenance@v2
         with:
-          subject-path: build/dinghy-[0-9]*.fwsc
+          subject-path: build/loopheads_*.fwsc
 
-      # (the release builds only, not the dev ones: dinghy-smk37.fwsc – no comment inside the block below: it would be part of the pattern)
       - name: Release (tags only)
         if: github.ref_type == 'tag'
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            build/dinghy-[0-9]*.fwsc
-            build/SHA256SUMS
-          generate_release_notes: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            echo "Release already exists for $GITHUB_REF_NAME"
+            exit 0
+          fi
+          version=$(cat VERSION)
+          release_flags=()
+          case "$version" in
+            0.*|*-*) release_flags+=(--prerelease) ;;
+          esac
+          gh release create "$GITHUB_REF_NAME" --verify-tag --generate-notes \
+            --title "LOOPHEADS $version" "${release_flags[@]}" \
+            "build/loopheads_$version.fwsc" build/SHA256SUMS

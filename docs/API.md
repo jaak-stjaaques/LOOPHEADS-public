@@ -245,7 +245,7 @@ In platform.c (or before `#include "platform.c"` where it says `#ifndef`):
 The app is built with `-Os`. Leave it so: with `-O2` (the unity build puts usb.c in it) the FM-1's USB-MIDI IN babbled
 on the device and the hub dropped the port (OberVave, 2026-10-13; which line -O2 breaks is not known).
 
-In tools/build.py, for your fork: `PRODUCT` (the identity), `DATA_FAMILY` (the SMK-37 store's owner tag),
+In tools/build.py, for your fork, see `FM1_PRODUCT` (the FM-1 identity), `DATA_FAMILY` (the SMK-37 store's owner tag),
 `SCREEN_NAME` and `SCREEN_COLOUR` (the update loader's screen on the FM-1: your name in your colour, while an
 install runs or after one was cut off).
 

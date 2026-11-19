@@ -1,0 +1,7 @@
+{
+  "what": "A four-tape looper and physical-modeling synth for the FM-1. Record and overdub independent note loops, reshape them with scales and live transpose, and let notes fade with Memory Leak. Each tape has its own sound, with shared delay and reverb.",
+  "kinds": ["synth"],
+  "image": "docs/fmhub-card.png",
+  "color": "#75DED5",
+  "sounds": "none"
+}
