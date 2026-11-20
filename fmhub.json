@@ -1,7 +1,7 @@
 {
   "what": "A four-tape looper and physical-modeling synth for the FM-1. Record and overdub independent note loops, reshape them with scales and live transpose, and let notes fade with Memory Leak. Each tape has its own sound, with shared delay and reverb.",
   "kinds": ["synth"],
-  "play": "https://joakimeriksson.github.io/fm1-emu/?fw=local&mhz=100",
+  "play": "https://joakimeriksson.github.io/fm1-emu/?fw=loopheads&mhz=100#play",
   "cheat": "https://github.com/jaak-stjaaques/LOOPHEADS-public/blob/main/docs/OPERATOR-MANUAL.md",
   "image": "docs/fmhub-card.png",
   "color": "#75DED5",

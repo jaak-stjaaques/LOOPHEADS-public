@@ -7,9 +7,8 @@ approximate charge level. More bars indicate a higher charge.
 
 ## Play in a browser
 
-Download [loopheads_0.1.2.fwsc](https://github.com/jaak-stjaaques/LOOPHEADS-public/releases/download/v0.1.2/loopheads_0.1.2.fwsc).
-Open the [FM‑1 emulator](https://joakimeriksson.github.io/fm1-emu/?fw=local&mhz=100),
-choose **Open .fwsc…** and select the downloaded file, then press **Start**.
+Open [LOOPHEADS in the FM‑1 emulator](https://joakimeriksson.github.io/fm1-emu/?fw=loopheads&mhz=100#play).
+LOOPHEADS is already selected. Press **Start** to load the firmware and enable audio.
 
 ## Make your first loop
 
